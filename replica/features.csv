@@ -7,27 +7,30 @@ feature,area,priority,original,clone,notes
 Уведомление об удалённом медиа (фото видео голос кружок документ стикер),core,must,yes,no,S04; копировать медиа сразу при получении
 Уведомление об изменении: было и стало,core,must,yes,no,S05
 Сохранение исчезающего медиа по ответу на него,core,must,yes,no,S06; проверить на живом аккаунте
-Пробный период 7 дней,billing,must,yes,no,
-Тарифы и оплата подписки,billing,must,yes,no,S08; Telegram Stars или провайдер — решить
-Остановка уведомлений после окончания подписки,billing,must,yes,no,S12
-Профиль: статус подписки и подключения,account,must,yes,no,S07
-Политика конфиденциальности и автоудаление старых копий,legal,must,no,no,своё улучшение; не у оригинала в явном виде
+Пробный период 7 дней,billing,must,yes,skip,личная версия: без оплаты
+Тарифы и оплата подписки,billing,must,yes,skip,личная версия: без оплаты
+Остановка уведомлений после окончания подписки,billing,must,yes,skip,личная версия: без оплаты
+Статус: подключение и права бота,account,must,yes,no,S07; /status
+Автоудаление старых копий,legal,must,no,no,RETENTION_DAYS=30 по умолчанию
 Сводка при массовом удалении (очистка чата),core,should,yes,no,S13; guess
 История изменений из нескольких правок,core,should,yes,no,
 Альбомы (media group) целиком,core,should,yes,no,
 Не уведомлять об удалении своих сообщений,core,should,yes,no,guess
 Настройки: что присылать,settings,should,yes,no,S10; guess
 Исключённые чаты,settings,should,no,no,своё улучшение
-Реферальная ссылка и бонус за оплату друга,referral,should,yes,no,S09; бонусные дни вместо денег на старте
-Два языка RU и EN,i18n,should,yes,no,у оригинала есть en-версия сайта
-Помощь и чат поддержки,support,should,yes,no,S14
-Mini App: лента удалённого и изменённого с поиском,mini app,could,yes,no,S11
-Разные цены для пользователей с Premium и без,billing,could,yes,no,
-Пожизненный тариф,billing,could,yes,no,
-Экспорт сохранённого,mini app,could,no,no,своё улучшение
-Админка: пользователи оплаты статистика,admin,could,no,no,для владельца
-Рассылка пользователям,admin,could,no,no,для владельца
+Реферальная ссылка и бонус за оплату друга,referral,should,yes,skip,личная версия: один пользователь
+Два языка RU и EN,i18n,should,yes,skip,личная версия: только RU
+Помощь /help,support,could,yes,no,S14
+Mini App: лента удалённого и изменённого с поиском,mini app,could,yes,skip,личная версия: история командой в боте
+Разные цены для пользователей с Premium и без,billing,could,yes,skip,личная версия: без оплаты
+Пожизненный тариф,billing,could,yes,skip,личная версия: без оплаты
+Экспорт сохранённого,mini app,could,no,no,своё улучшение; позже
+Админка: пользователи оплаты статистика,admin,could,no,skip,личная версия: один пользователь
+Рассылка пользователям,admin,could,no,skip,личная версия: один пользователь
 Денежная двухуровневая рефералка с выводом,referral,could,yes,skip,финансовые обязательства; начать с бонусных дней
 Работа без Premium через вход в аккаунт (userbot),onboarding,could,no,skip,доступ к аккаунту целиком; не делаем
 Название логотип и тексты Not Spy,brand,must,yes,skip,чужой бренд; только свой
 Обход защиты от скриншотов и пересылки,core,could,no,skip,сверх Bot API не делаем
+Доступ только владельцу (OWNER_ID),security,must,no,no,личная версия
+Игнорировать подключения чужих аккаунтов,security,must,no,no,business_connection не от OWNER_ID отклонять
+История удалённого и изменённого командой,core,should,no,no,вместо Mini App: /deleted /edited
